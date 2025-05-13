@@ -1,12 +1,112 @@
-# React + Vite
+# Mini ERP Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The React frontend implementation of our Mini ERP system, designed to mimic NetSuite's user interface and workflow. This interface demonstrates my understanding of NetSuite's UI patterns and manufacturing business processes.
 
-Currently, two official plugins are available:
+## NetSuite UI Similarities
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+| NetSuite UI Element | Our Implementation |
+|---------------------|-------------------|
+| Dashboard | KPI cards and recent activity lists |
+| List Views | Sortable and filterable data tables |
+| Record Detail Views | Form-based layouts with sections |
+| Subsidiary Selector | Location filtering |
+| Status Indicators | Color-coded status pills |
+| NetSuite Navigation | Left sidebar with hierarchical structure |
 
-## Expanding the ESLint configuration
+## Key Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Dashboard**: Overview of manufacturing operations with KPIs
+- **Product Management**: Create and maintain products (similar to NetSuite Items)
+- **Recipe Management**: Define manufacturing recipes with ingredients (similar to NetSuite BOMs)
+- **Batch Production**: Plan and track batches (similar to NetSuite Work Orders)
+- **Inventory Tracking**: Monitor inventory levels with alerts (similar to NetSuite Inventory Items)
+
+## Component Structure
+
+```
+frontend/
+├── src/
+│   ├── components/      # Reusable UI components
+│   │   ├── layout/      # Layout components (sidebar, header)
+│   │   └── ui/          # UI components (buttons, cards, tables)
+│   │   
+│   ├── pages/           # Main page components
+│   │   ├── Dashboard.jsx # Overview page
+│   │   ├── ProductList.jsx # Product management
+│   │   ├── RecipeList.jsx # Recipe management
+│   │   ├── BatchList.jsx # Batch processing
+│   │   └── InventoryList.jsx # Inventory management
+│   │   
+│   ├── utils/           # Helper functions
+│   │   
+│   ├── App.jsx          # Main application component
+│   └── main.jsx         # Application entry point
+└── public/              # Static assets
+```
+
+## NetSuite-Inspired UI Elements
+
+### Dashboard
+
+The dashboard provides an overview of manufacturing operations with KPIs similar to NetSuite's dashboard:
+
+- Statistical cards for key metrics
+- Recent batch activities
+- Inventory alerts for items below reorder points
+- Quick links to common operations
+
+### List Views
+
+Product, recipe, batch and inventory list views follow NetSuite's pattern:
+
+- Column headers with sorting capability
+- Filters for narrowing results
+- Status indicators with color coding
+- Action buttons for each record
+- Pagination for large datasets
+
+### Form Layout
+
+The data entry forms mimic NetSuite's form layout:
+
+- Field grouping in logical sections
+- Required field indicators
+- Field validation with error messages
+- Cancel/Save buttons
+
+### Navigation
+
+The sidebar navigation implements a NetSuite-like structure:
+
+- Hierarchical organization of features
+- Visual indication of current section
+- Compact design to maximize working area
+
+## Technology Stack
+
+- **React**: UI library
+- **React Router**: Client-side routing
+- **TailwindCSS**: Styling framework
+- **Axios**: API communication
+
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+The development server runs on http://localhost:5173 by default, and should connect to the backend API running on http://localhost:3000.
+
+## Building for Production
+
+```bash
+# Create an optimized production build
+npm run build
+
+# Preview the production build
+npm run preview
+```
