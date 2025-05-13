@@ -1,0 +1,39 @@
+{
+  "name": "mini-erp",
+  "version": "1.0.0",
+  "description": "A Node.js-based Mini ERP system that mimics NetSuite functionality",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "migrate": "prisma migrate deploy",
+    "seed": "node prisma/seed.js",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "erp",
+    "netsuite",
+    "manufacturing",
+    "inventory",
+    "nodejs"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^6.7.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "node-cron": "^4.0.0",
+    "oauth-1.0a": "^2.2.6"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.0",
+    "prisma": "^6.7.0"
+  }
+}
