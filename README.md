@@ -95,8 +95,8 @@ mini-erp/
 ```
 
 ## Screenshot
+![8315209E-5957-4678-998D-D0B4691308CD](https://github.com/user-attachments/assets/a8286c5d-1ea1-4e46-ac90-6d1ebd864370)
 
-[Insert screenshot of dashboard here]
 
 ## License
 
